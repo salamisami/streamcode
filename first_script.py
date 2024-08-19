@@ -35,10 +35,6 @@ def update_user_counter(csv_file, _username):
                     reader = csv.reader(file)
                     rows = list(reader)
                     #print(f"Using CSV file: {csv_file}") #debugging line if csv doesnt "save"
-
-
-                if rows and rows[0] != ['user', 'counter']:
-                    rows.insert(0, ['user', 'counter'])
                 for i, row in enumerate(rows):
                     if row[0] == _username:
                         count = int(row[1]) + 1  # Increment the counter

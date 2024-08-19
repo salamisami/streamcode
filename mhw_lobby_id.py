@@ -26,7 +26,7 @@ def get_process_by_name(process_name):
             continue
         # Try to read the process memory
         try:
-            h_process = win32api.OpenProcess(win32con.PROCESS_QUERY_INFORMATION 
+            h_process = win32api.OpenProcess(win32con.PROCESS_QUERY_INFORMATION
                                              | win32con.PROCESS_ALL_ACCESS, True, process_id)
             # Try to read the modules of the process
             try:
@@ -51,7 +51,7 @@ def print_id():
     #print(process.__dict__)
     _, base_address = get_process_by_name('MonsterHunterWorld.exe')
     id_pointer = process.get_pointer(base_address + 0x050112F0,
-                                     offsets=[0xAE8, 0xF0, 0x128, 
+                                     offsets=[0xAE8, 0xF0, 0x128,
                                               0x58, 0xD0, 0x1D0, 0x208, 0x30, 0x3C8])
     answer = ""
     for x in range(3):
